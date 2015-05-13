@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/_PROGRAM_DATA/VISUAL STUDIO 2013/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="ProjectPath = ..\architectuurLib\architectuurLib.csproj" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="TemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:09:55" Importance="Medium" Text="architectuur's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'architectuur::CircuitController' -  (Class), 'architectuur::NodeMediator' -  (Class), 'architectuur::CircuitBuilder' -  (Class), 'architectuur::CircuitStreamReader' -  (Class), 'architectuur::NodeFactory' -  (Class), 'architectuur::INPUT' -  (Class), 'architectuur::PROBE' -  (Class), 'architectuur::NOT' -  (Class), 'architectuur::XOR' -  (Class), 'architectuur::OR' -  (Class), 'architectuur::NOR' -  (Class), 'architectuur::AND' -  (Class), 'architectuur::NAND' -  (Class) " />
+  <Message Timestamp="2015-05-01T13:10:13" Importance="Medium" Text="Project Added: c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\architectuurLib.csproj" />
+  <Message Timestamp="2015-05-01T13:10:13" Importance="Medium" Text="'architectuur::CircuitController' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\CircuitController.cs" />
+  <Message Timestamp="2015-05-01T13:10:15" Importance="Medium" Text="'architectuur::NodeMediator' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\NodeMediator.cs" />
+  <Message Timestamp="2015-05-01T13:10:16" Importance="Medium" Text="'architectuur::CircuitBuilder' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\CircuitBuilder.cs" />
+  <Message Timestamp="2015-05-01T13:10:17" Importance="Medium" Text="'architectuur::CircuitStreamReader' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\CircuitStreamReader.cs" />
+  <Message Timestamp="2015-05-01T13:10:18" Importance="Medium" Text="'architectuur::NodeFactory' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\NodeFactory.cs" />
+  <Message Timestamp="2015-05-01T13:10:19" Importance="Medium" Text="'architectuur::INPUT' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\INPUT.cs" />
+  <Message Timestamp="2015-05-01T13:10:20" Importance="Medium" Text="'architectuur::PROBE' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\PROBE.cs" />
+  <Message Timestamp="2015-05-01T13:10:21" Importance="Medium" Text="'architectuur::NOT' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\NOT.cs" />
+  <Message Timestamp="2015-05-01T13:10:22" Importance="Medium" Text="'architectuur::XOR' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\XOR.cs" />
+  <Message Timestamp="2015-05-01T13:10:22" Importance="Medium" Text="'architectuur::OR' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\OR.cs" />
+  <Message Timestamp="2015-05-01T13:10:23" Importance="Medium" Text="'architectuur::NOR' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\NOR.cs" />
+  <Message Timestamp="2015-05-01T13:10:24" Importance="Medium" Text="'architectuur::AND' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\AND.cs" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Medium" Text="'architectuur::NAND' -  (Class) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\NAND.cs" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="ProjectPath = ..\architectuurLib\architectuurLib.csproj" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="TemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:10:25" Importance="Medium" Text="architectuur's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'architectuur::StreamReader' -  (Interface), 'architectuur::Node' -  (Interface) " />
+  <Message Timestamp="2015-05-01T13:10:27" Importance="Medium" Text="'architectuur::StreamReader' -  (Interface) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\StreamReader.cs" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Medium" Text="'architectuur::Node' -  (Interface) : success (file created) - c:\users\terry\documents\visual studio 2013\Projects\architectuur\architectuurLib\GeneratedCode\Node.cs" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="ProjectPath = ..\architectuurLib\architectuurLib.csproj" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="TemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\_PROGRAM_DATA\VISUAL STUDIO 2013\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-05-01T13:10:28" Importance="Medium" Text="architectuur's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'architectuur::CircuitController' -  (Class), 'architectuur::NodeMediator' -  (Class), 'architectuur::CircuitBuilder' -  (Class), 'architectuur::CircuitStreamReader' -  (Class), 'architectuur::NodeFactory' -  (Class), 'architectuur::INPUT' -  (Class), 'architectuur::PROBE' -  (Class), 'architectuur::NOT' -  (Class), 'architectuur::XOR' -  (Class), 'architectuur::OR' -  (Class), 'architectuur::NOR' -  (Class), 'architectuur::AND' -  (Class), 'architectuur::NAND' -  (Class) " />
+  <Message Timestamp="2015-05-01T13:10:29" Importance="Diagnostic" Text="'architectuur::CircuitController' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:29" Importance="Diagnostic" Text="'architectuur::NodeMediator' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:29" Importance="Diagnostic" Text="'architectuur::CircuitBuilder' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:29" Importance="Diagnostic" Text="'architectuur::CircuitStreamReader' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::NodeFactory' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::INPUT' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::PROBE' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::NOT' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::XOR' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:30" Importance="Diagnostic" Text="'architectuur::OR' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:31" Importance="Diagnostic" Text="'architectuur::NOR' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:31" Importance="Diagnostic" Text="'architectuur::AND' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:31" Importance="Diagnostic" Text="'architectuur::NAND' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="The selection included 13 elements which were not bound to a template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (Dependency): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (Dependency): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (Dependency): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (Association): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="Diagnostic" Text="'architectuur::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-05-01T13:10:32" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+</Log>
