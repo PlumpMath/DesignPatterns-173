@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Circuit
+namespace CircuitSimulator
 {
-    public class XOR : Node
+    public class PROBE : Node
     {
-       public XOR()
+        public PROBE()
         {
             NextList = new List<Node>();
             PreviousList = new List<Node>();
@@ -48,6 +48,8 @@ namespace Circuit
             {
                 foreach(Node node in NextList){
                     node.Recieve(1);
+                    // PROBE
+                    // return 0,1
                 }
             }
         }

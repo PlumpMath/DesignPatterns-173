@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,23 @@ namespace Circuit
                     return _nodeFactory;
                 }
             }
+        }
+
+        public Node MakeNode(String node)
+        {
+            Node result = null;
+            try
+            {
+                Type type = Type.GetType("Circuit." + node.ToString());
+                ConstructorInfo ctorInfo = type.GetConstructor(new[] { typeof(Node) });
+                result = ctorInfo.Invoke(new Object[] { result }) as Node;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Class Not Found");
+            }
+
+            return result;
         }
     }
 }

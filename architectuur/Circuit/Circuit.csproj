@@ -41,21 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircuitBuilder.cs" />
-    <Compile Include="CircuitController.cs" />
-    <Compile Include="CircuitStreamReader.cs" />
-    <Compile Include="INPUT.cs" />
-    <Compile Include="NAND.cs" />
-    <Compile Include="Node.cs" />
-    <Compile Include="NodeFactory.cs" />
-    <Compile Include="NodeMediator.cs" />
-    <Compile Include="NOR.cs" />
-    <Compile Include="NOT.cs" />
-    <Compile Include="OR.cs" />
-    <Compile Include="PROBE.cs" />
+    <Compile Include="Circuit\CircuitBuilder.cs" />
+    <Compile Include="Circuit\CircuitController.cs" />
+    <Compile Include="Circuit\CircuitStreamReader.cs" />
+    <Compile Include="Nodes\INPUT.cs" />
+    <Compile Include="Nodes\NAND.cs" />
+    <Compile Include="Nodes\Node.cs" />
+    <Compile Include="Handlers\NodeFactory.cs" />
+    <Compile Include="Handlers\NodeMediator.cs" />
+    <Compile Include="Nodes\NOR.cs" />
+    <Compile Include="Nodes\NOT.cs" />
+    <Compile Include="Nodes\OR.cs" />
+    <Compile Include="Nodes\PROBE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XOR.cs" />
+    <Compile Include="Nodes\XOR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
