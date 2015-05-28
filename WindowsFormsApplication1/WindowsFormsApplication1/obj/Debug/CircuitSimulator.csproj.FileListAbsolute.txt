@@ -1,0 +1,9 @@
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.csprojResolveAssemblyReference.cache
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.Properties.Resources.resources
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.csproj.GenerateResource.Cache
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\CircuitSimulator.exe.config
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\CircuitSimulator.exe
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\CircuitSimulator.pdb
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.Main.resources
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.exe
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircuitSimulator.pdb

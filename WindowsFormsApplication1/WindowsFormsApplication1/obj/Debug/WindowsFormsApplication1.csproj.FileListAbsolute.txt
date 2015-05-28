@@ -1,0 +1,2 @@
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\_Data\Github\DesignPatterns\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\CircuitSimulator.exe.config
