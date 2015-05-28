@@ -15,7 +15,7 @@ namespace CircuitSimulator
         public CircuitStreamReader(String fileName)
         {
             _lines = new List<String>();
-            _file = fileName;
+            _file = fileName;//
         }
 
         
