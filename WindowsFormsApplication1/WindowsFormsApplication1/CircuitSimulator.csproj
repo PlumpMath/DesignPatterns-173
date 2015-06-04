@@ -49,7 +49,6 @@
     <Compile Include="Circuits\CircuitStreamReader.cs" />
     <Compile Include="Handlers\NodeFactory.cs" />
     <Compile Include="Handlers\NodeMediator.cs" />
-    <Compile Include="Handlers\RelayCommand.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

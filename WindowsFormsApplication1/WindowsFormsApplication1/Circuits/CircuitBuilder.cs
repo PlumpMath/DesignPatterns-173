@@ -23,16 +23,15 @@ namespace CircuitSimulator
             set
             {
                 _StringList = value;
-                OnPropertyChanged();
             }
         }
-        private Dictionary<string, string> _nodeMap
+        private Dictionary<string, Node> _nodeMap
         {
             get;
             set;
         }
 
-        public Dictionary<string, string> NodeMap
+        public Dictionary<string, Node> NodeMap
         {
             get
             {
@@ -40,13 +39,13 @@ namespace CircuitSimulator
             }
         }
 
-        private Dictionary<string, string> _linkMap
+        private Dictionary<string, Node> _linkMap
         {
             get;
             set;
         }
 
-        public Dictionary<string, string> LinkMap
+        public Dictionary<string, Node> LinkMap
         {
             get
             {
@@ -86,8 +85,8 @@ namespace CircuitSimulator
 
         public virtual void Build(String fileName)
         {
-            _nodeMap = new Dictionary<string, string>();
-            _linkMap = new Dictionary<string, string>();
+            _nodeMap = new Dictionary<string, Node>();
+            _linkMap = new Dictionary<string, Node>();
             StringList = new ObservableCollection<string>();
             CircuitStreamReader sReader = new CircuitStreamReader(fileName);
             for (int i = 0; i < sReader.CountLines(); i++)
@@ -102,11 +101,12 @@ namespace CircuitSimulator
                         {
                             if (_nodeMap.ContainsKey(parts[0]))
                             {
-                                _linkMap.Add(parts[0], parts[1]);
+                                _linkMap.Add(parts[0], null);
                             }
                             else
                             {
-                                _nodeMap.Add(parts[0], parts[1]);
+                               Node node = _NodeFactory.MakeNode(parts[1]);
+                                _nodeMap.Add(parts[0], node);
 
                             }
                             Console.WriteLine("[" + parts[0] + "," + parts[1] + "]");
@@ -118,13 +118,7 @@ namespace CircuitSimulator
                 }
 
             }
-
-        }
-
-        public void OnPropertyChanged([CallerMemberName] string property = null)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            Console.WriteLine("Done");
         }
 
     }

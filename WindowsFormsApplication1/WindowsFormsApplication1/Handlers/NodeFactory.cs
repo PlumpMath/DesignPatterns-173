@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CircuitSimulator
 {
@@ -31,15 +32,32 @@ namespace CircuitSimulator
         public Node MakeNode(String node)
         {
             Node result = null;
+            byte bit = 0;
             try
             {
-                Type type = Type.GetType("CircuitSimulator." + node.ToString());
-                ConstructorInfo ctorInfo = type.GetConstructor(new[] { typeof(Node) });
+                if (node == "INPUT_HIGH")
+                {
+                    node = "INPUT";
+                    bit = 1;
+                }
+                if (node == "INPUT_LOW")
+                {
+                    node = "INPUT";
+                    bit = 0;
+                }
+                Assembly assembly = Assembly.Load("CircuitSimulator");
+                Type t = assembly.GetType("CircuitSimulator." + node.ToString());
+                //Type type = Type.GetType("CircuitSimulator." + node.ToString());
+                ConstructorInfo ctorInfo = t.GetConstructor(new[] { typeof(Node) });
                 result = ctorInfo.Invoke(new Object[] { result }) as Node;
+                if (node == "INPUT")
+                {
+                    result.BitList.Add(bit);
+                }
             }
             catch (Exception)
             {
-                throw new Exception("Class Not Found");
+                MessageBox.Show("Class Not Found");
             }
 
             return result;

@@ -1,5 +1,4 @@
-﻿using CircuitSimulator.Handlers;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,21 +26,6 @@ namespace CircuitSimulator
         {
             _NodeMediator = mediator;
             _CircuitBuilder = circuit;
-        }
-
-        private RelayCommand _openFileCommand;
-        public RelayCommand OpenFileCommand
-        {
-            get
-            {
-                return _openFileCommand = _openFileCommand ??
-                    new RelayCommand(() =>
-                    {
-                        OpenFileDialog openFileDialog = new OpenFileDialog();
-                        if (openFileDialog.ShowDialog() == DialogResult.OK)
-                            _CircuitBuilder.Build(openFileDialog.FileName);
-                    });
-            }
         }
 
         public void Start()
