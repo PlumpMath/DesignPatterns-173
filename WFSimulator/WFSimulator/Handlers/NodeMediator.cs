@@ -10,16 +10,16 @@ namespace WFSimulator.Handlers
 {
     public class NodeMediator
     {
-        private CircuitBuilder _circuitBuilder;
+        private CircuitManager _circuitManager;
 
-        public void Register(CircuitBuilder circuitBuilder)
+        public void Register(CircuitManager circuitManager)
         {
-            _circuitBuilder = circuitBuilder;
+            _circuitManager = circuitManager;
         }
 
         public void Send()
         {
-            _circuitBuilder.Start();
+            _circuitManager.Run();
         }
     }
 }

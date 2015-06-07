@@ -64,44 +64,21 @@ namespace WFSimulator.Circuits
             set;
         }
 
-        private NodeMediator _NodeMediator
-        {
-            get;
-            set;
-        }
         private NodeFactory _NodeFactory
         {
             get;
             set;
         }
 
-        public CircuitBuilder(NodeMediator mediator, NodeFactory factory)
+        public CircuitBuilder(NodeFactory factory)
         {
-            _NodeMediator = mediator;
             _NodeFactory = factory;
             StringList = new ObservableCollection<string>();
-            mediator.Register(this);
              Visitor = new CheckNodeVisitor();
         }
 
-        public virtual IEnumerable<Node> Node
+        public void Build(String fileName)
         {
-            get;
-            set;
-        }
-
-        public void Start()
-        {
-            foreach (Node node in NodeMap.Values)
-            {
-                node.Send();
-            }
-        }
-
-#warning Improve this method
-        public virtual void Build(String fileName)
-        {
-           
             _nodeMap = new Dictionary<string, Node>();
             _linkMap = new Dictionary<string, string[]>();
             StringList = new ObservableCollection<string>();
@@ -109,35 +86,32 @@ namespace WFSimulator.Circuits
             for (int i = 0; i < sReader.CountLines(); i++)
             {
                 String line = sReader.GetLine(i);
-                if (line.IndexOf("#") < 0)
+                string[] parts = line.Split(':').Select(p => p.Trim().TrimEnd(';')).ToArray();
+                if (parts.Length == 2)
                 {
-                    if (line.Length > 0)
+                    if (_nodeMap.ContainsKey(parts[0]))
                     {
-                        string[] parts = line.Split(':').Select(p => p.Trim().TrimEnd(';')).ToArray();
-                        if (parts.Length == 2)
-                        {
-                            if (_nodeMap.ContainsKey(parts[0]))
-                            {
-                                string[] subParts = parts[1].Split(',').Select(p => p.Trim()).ToArray();
-                                _linkMap.Add(parts[0], subParts);
-                            }
-                            else
-                            {
-                                Node node = _NodeFactory.MakeNode(parts[1]);
-                                node.Name = parts[0];
-                                _nodeMap.Add(parts[0], node);
-
-                            }
-                            StringList.Add("[" + parts[0] + "," + parts[1] + "]");
-                        }
+                        string[] subParts = parts[1].Split(',').Select(p => p.Trim()).ToArray();
+                        _linkMap.Add(parts[0], subParts);
+                    }
+                    else
+                    {
+                        Node node = _NodeFactory.MakeNode(parts[1]);
+                        node.Name = parts[0];
+                        _nodeMap.Add(parts[0], node);
 
                     }
-
+                    StringList.Add("[" + parts[0] + "," + parts[1] + "]");
                 }
 
             }
             StringList.Add("");
             StringList.Add("");
+            
+        }
+
+        public bool checkCircuit()
+        {
             if (LinkNodes(_nodeMap, _linkMap))
             {
                 int x = 0;
@@ -148,7 +122,7 @@ namespace WFSimulator.Circuits
                         node.CheckNode();
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     StringList.Add(e.Message);
                     x++;
@@ -156,21 +130,17 @@ namespace WFSimulator.Circuits
                 if (x == 0)
                 {
                     StringList.Add("Link Created");
-                    Run();
+                    return true;
                 }
-                
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 StringList.Add("Link Error Please check te file");
-            }
-
-        }
-
-        public virtual void Run(){
-            foreach (Node node in NodeMap.Values)
-            {
-                node.Send();
+                return false;
             }
         }
 

@@ -23,7 +23,18 @@ namespace WFSimulator.Circuits
         public void ExtractLines()
         {
             _lines = new List<String>(File.ReadAllLines(_file));
-
+            List<String> unsetLines = new List<string>();
+            foreach (string line in _lines)
+            {
+                if (line.Length < 1 || line.IndexOf("#") > 0)
+                {
+                    unsetLines.Add(line);
+                }
+            }
+            foreach (string line in unsetLines)
+            {
+                _lines.Remove(line);
+            }
         }
 
         public int CountLines()

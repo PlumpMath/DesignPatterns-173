@@ -21,8 +21,9 @@ namespace WFSimulator
             NodeMediator nMediator = new NodeMediator();
             NodeFactory nFactory = NodeFactory.Instance;
             nFactory.setMediator(nMediator);
-            CircuitBuilder nCircuitBuilder = new CircuitBuilder(nMediator, nFactory);
-            controller = new CircuitController(nMediator, nCircuitBuilder);
+            CircuitBuilder nCircuitBuilder = new CircuitBuilder(nFactory);
+            CircuitManager nManager = new CircuitManager(nCircuitBuilder);
+            controller = new CircuitController(nMediator, nManager);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,9 +31,9 @@ namespace WFSimulator
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                controller.CircuitBuilder.Build(openFileDialog.FileName);
+                controller.BuildCircuit(openFileDialog.FileName);
                 textBox1.Clear();
-                foreach (string line in controller.CircuitBuilder.StringList)
+                foreach (string line in controller.getOutput())
                 {
                     textBox1.AppendText(line);
                     textBox1.AppendText(Environment.NewLine);
@@ -40,5 +41,12 @@ namespace WFSimulator
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            controller.Start();
+        }
+
+ 
     }
 }

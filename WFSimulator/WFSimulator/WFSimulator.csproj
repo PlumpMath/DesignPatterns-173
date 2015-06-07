@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Circuits\CircuitBuilder.cs" />
     <Compile Include="Circuits\CircuitController.cs" />
+    <Compile Include="Circuits\CircuitManager.cs" />
     <Compile Include="Circuits\CircuitStreamReader.cs" />
     <Compile Include="Handlers\NodeFactory.cs" />
     <Compile Include="Handlers\NodeMediator.cs" />

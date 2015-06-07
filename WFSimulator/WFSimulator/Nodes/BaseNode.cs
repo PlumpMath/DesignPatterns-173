@@ -70,12 +70,12 @@ namespace WFSimulator.Nodes
         {
             if (PreviousList.Count != 2)
             {
-                throw new Exception(this.GetType().Name+" Node does not have two previous nodes connected");
+                throw new Exception(this.Name+" Node does not have two previous nodes connected");
             }
 
             if (NextList.Count == 0)
             {
-                throw new Exception(this.GetType().Name+" Node does not have a next item");
+                throw new Exception(this.Name+" Node does not have a next item");
             }
         }
 

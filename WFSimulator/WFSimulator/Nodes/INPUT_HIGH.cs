@@ -12,5 +12,11 @@ namespace WFSimulator.Nodes
         {
             BitList.Add(1);
         }
+
+        public override void Send()
+        {
+            base.Send();
+            BitList.Add(1);
+        }
     }
 }

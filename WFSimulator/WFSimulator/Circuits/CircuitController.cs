@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,24 +12,27 @@ namespace WFSimulator.Circuits
     {
         private NodeMediator _NodeMediator;
 
-        private CircuitBuilder _CircuitBuilder;
-        public CircuitBuilder CircuitBuilder
-        {
-            get
-            {
-                return _CircuitBuilder;
-            }
-        }
+        private CircuitManager _CircuitManager;
 
-        public CircuitController(NodeMediator mediator, CircuitBuilder circuit)
+        public CircuitController(NodeMediator mediator, CircuitManager manager)
         {
             _NodeMediator = mediator;
-            _CircuitBuilder = circuit;
+            _CircuitManager = manager;
         }
 
         public void Start()
         {
-            throw new System.NotImplementedException();
+            _CircuitManager.Run();
+        }
+
+        public void BuildCircuit(string file)
+        {
+            _CircuitManager.BuildCircuit(file);
+        }
+
+        public ObservableCollection<string> getOutput()
+        {
+            return _CircuitManager.getOutput();
         }
 
         public void CalculateDelay()
