@@ -13,18 +13,20 @@ namespace WFSimulator.Nodes
 
         List<Node> PreviousList { get; set; }
 
-        List<Byte> BitList { get; set; }
+        List<int> BitList { get; set; }
 
         bool AddNext(Node node);
 
         bool AddPrevious(Node node);
 
+        string Name { get; set; }
+
         void Send();
 
-        void Recieve(byte input);
+        void Recieve(int input);
 
-        bool CheckNext(Node node);
+        void CheckNode();
 
-        bool CheckPrevious(Node node);
+        void Accept(IVisitor vistor);
     }
 }

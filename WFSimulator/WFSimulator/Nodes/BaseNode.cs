@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WFSimulator.Handlers;
 
 namespace WFSimulator.Nodes
 {
@@ -12,9 +13,16 @@ namespace WFSimulator.Nodes
         {
             NextList = new List<Node>();
             PreviousList = new List<Node>();
-            BitList = new List<byte>();
+            BitList = new List<int>();
         }
+
         public List<Node> NextList
+        {
+            get;
+            set;
+        }
+
+        public string Name
         {
             get;
             set;
@@ -26,75 +34,18 @@ namespace WFSimulator.Nodes
             set;
         }
 
-        public List<byte> BitList
+        public List<int> BitList
         {
             get;
             set;
-        }
-
-        public bool CheckNext(Node node)
-        {
-            if (NextList.Count > 0)
-            {
-                if (NextList.Contains(node))
-                {
-                    return false;
-                }
-                else
-                {
-                    bool hasError = true;
-                    foreach (Node n in NextList)
-                    {
-                        hasError = n.CheckNext(node);
-                        if (!hasError)
-                            break;
-                    }
-                    return hasError;
-                }
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        public bool CheckPrevious(Node node)
-        {
-            if (PreviousList.Count > 0)
-            {
-                if (PreviousList.Contains(node))
-                {
-                    return false;
-                }
-                else
-                {
-                    bool hasError = true;
-                    foreach (Node n in PreviousList)
-                    {
-                        hasError = n.CheckPrevious(node);
-                        if (!hasError)
-                            break;
-                    }
-                    return hasError;
-                }
-            }
-            else
-            {
-                return true;
-            }
         }
 
         public bool AddNext(Node node)
         {
             if (this != node)
             {
-                bool nextList = CheckNext(node);
-                bool prevList = CheckPrevious(node);
-                if (nextList && prevList)
-                {
-                    NextList.Add(node);
+                NextList.Add(node);
                     return true;
-                }
             }
             return false;
             
@@ -104,26 +55,39 @@ namespace WFSimulator.Nodes
         {
             if (this != node)
             {
-                bool nextList = CheckNext(node);
-                bool prevList = CheckPrevious(node);
-                if (nextList && prevList)
-                {
-                    PreviousList.Add(node);
+                PreviousList.Add(node);
                     return true;
-                }
             }
             return false;
         }
 
-        public void Send()
+        public virtual void Send()
         {
             throw new NotImplementedException();
         }
 
-        public void Recieve(byte input)
+        public virtual void CheckNode()
+        {
+            if (PreviousList.Count != 2)
+            {
+                throw new Exception(this.GetType().Name+" Node does not have two previous nodes connected");
+            }
+
+            if (NextList.Count == 0)
+            {
+                throw new Exception(this.GetType().Name+" Node does not have a next item");
+            }
+        }
+
+        public virtual void Recieve(int input)
         {
             BitList.Add(input);
             Send();
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }

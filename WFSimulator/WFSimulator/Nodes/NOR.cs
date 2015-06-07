@@ -8,6 +8,21 @@ namespace WFSimulator.Nodes
 {
     public class NOR : BaseNode
     {
-        
+        public NOR() : base() { }
+
+        public override void Send()
+        {
+            if (BitList.Count == PreviousList.Count)
+            {
+
+                int answer = (BitList[0] == 1) ? 0 : 1;
+
+                foreach (Node next in NextList)
+                {
+                    next.Recieve(answer);
+                }
+                BitList.Clear();
+            }
+        }
     }
 }

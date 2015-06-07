@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace WFSimulator.Nodes
 {
-    public class INPUT_LOW : BaseNode
+    public class INPUT_LOW : INPUT
     {
         public INPUT_LOW()
             : base()
         {
             BitList.Add(0);
-        }
-        
+        }        
     }
 }

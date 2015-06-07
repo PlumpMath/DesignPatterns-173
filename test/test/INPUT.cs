@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WFSimulator.Nodes
+namespace test
 {
-    public class INPUT_HIGH : INPUT
+    public class INPUT : Node
     {
-        public INPUT_HIGH():base()
-        {
-            BitList.Add(1);
+        public void Speak(){
+            Console.WriteLine("INPUT");
         }
     }
 }

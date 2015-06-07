@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WFSimulator.Nodes
 {
-    public class XOR : BaseNode
+    class XNOR : BaseNode
     {
-        public XOR() : base() { }
+        public XNOR() : base() { }
 
         public override void Send()
         {
@@ -18,6 +18,7 @@ namespace WFSimulator.Nodes
                 int answer = BitList[0] + BitList[1];
                 if (answer == 2)
                     answer = 0;
+                answer = (answer == 1) ? 0 : 1;
 
                 foreach (Node next in NextList)
                 {

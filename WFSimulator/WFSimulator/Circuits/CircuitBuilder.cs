@@ -38,6 +38,12 @@ namespace WFSimulator.Circuits
             }
         }
 
+        private CheckNodeVisitor Visitor
+        {
+            get;
+            set;
+        } 
+
         private Dictionary<string, string[]> _linkMap
         {
             get;
@@ -75,6 +81,7 @@ namespace WFSimulator.Circuits
             _NodeFactory = factory;
             StringList = new ObservableCollection<string>();
             mediator.Register(this);
+             Visitor = new CheckNodeVisitor();
         }
 
         public virtual IEnumerable<Node> Node
@@ -91,8 +98,10 @@ namespace WFSimulator.Circuits
             }
         }
 
+#warning Improve this method
         public virtual void Build(String fileName)
         {
+           
             _nodeMap = new Dictionary<string, Node>();
             _linkMap = new Dictionary<string, string[]>();
             StringList = new ObservableCollection<string>();
@@ -115,10 +124,10 @@ namespace WFSimulator.Circuits
                             else
                             {
                                 Node node = _NodeFactory.MakeNode(parts[1]);
+                                node.Name = parts[0];
                                 _nodeMap.Add(parts[0], node);
 
                             }
-                            Console.WriteLine("[" + parts[0] + "," + parts[1] + "]");
                             StringList.Add("[" + parts[0] + "," + parts[1] + "]");
                         }
 
@@ -131,13 +140,38 @@ namespace WFSimulator.Circuits
             StringList.Add("");
             if (LinkNodes(_nodeMap, _linkMap))
             {
-                StringList.Add("Link Created");
+                int x = 0;
+                try
+                {
+                    foreach (Node node in NodeMap.Values)
+                    {
+                        node.CheckNode();
+                    }
+                }
+                catch(Exception e)
+                {
+                    StringList.Add(e.Message);
+                    x++;
+                }
+                if (x == 0)
+                {
+                    StringList.Add("Link Created");
+                    Run();
+                }
+                
             }
             else
             {
                 StringList.Add("Link Error Please check te file");
             }
 
+        }
+
+        public virtual void Run(){
+            foreach (Node node in NodeMap.Values)
+            {
+                node.Send();
+            }
         }
 
         public virtual bool LinkNodes(Dictionary<string, Node> nodeMap ,Dictionary<string, string[]> linkMap)
@@ -152,14 +186,25 @@ namespace WFSimulator.Circuits
                         if (nodeMap.ContainsKey(linkedlink))
                         {
                             Node linkNode = nodeMap[linkedlink];
-                            bool canNext = node.AddNext(linkNode);
-                            bool canPrev = linkNode.AddPrevious(node);
+                            node.Accept(Visitor);
+                            bool canNext = Visitor.CanAddNext(linkNode);
+                            if (canNext)
+                            {
+                                node.AddNext(linkNode);
+                            }
+                            linkNode.Accept(Visitor);
+                            bool canPrev = Visitor.CanAddPrevious(node);
+                            if (canPrev)
+                            {
+                                linkNode.AddPrevious(node);
+                            }
                             if (!canNext || !canPrev)
                             {
                                 return false;
                             }
-                        }else
-                            return false
+                        }
+                        else
+                            return false;
                     }
                 }
                 else
