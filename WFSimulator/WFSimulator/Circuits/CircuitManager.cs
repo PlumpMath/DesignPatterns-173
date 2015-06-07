@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFSimulator.Handlers;
 using WFSimulator.Nodes;
 
 namespace WFSimulator.Circuits
@@ -14,9 +15,10 @@ namespace WFSimulator.Circuits
         private CircuitBuilder _CircuitBuilder;
         private bool canRun;
 
-        public CircuitManager(CircuitBuilder circuit){
+        public CircuitManager(CircuitBuilder circuit, NodeMediator mediator){
             _CircuitBuilder = circuit;
             canRun = false;
+            mediator.Register(this);
         }
 
         public void BuildCircuit(string fileName)
@@ -30,7 +32,7 @@ namespace WFSimulator.Circuits
             return _CircuitBuilder.StringList;
         }
 
-        public void Run()
+        public void Recieve()
         {
             if (canRun)
             {

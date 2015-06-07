@@ -22,7 +22,7 @@ namespace WFSimulator.Circuits
 
         public void Start()
         {
-            _CircuitManager.Run();
+            _NodeMediator.Send();
         }
 
         public void BuildCircuit(string file)
